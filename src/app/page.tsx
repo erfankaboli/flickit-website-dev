@@ -5,7 +5,7 @@ import Typewriter from './components/TyprWriter'
 
 export default function Home() {
 
-  const assessmentKits = [
+  const assessmentKits:any[] = [
     {
       title: 'Qualify an enterprise system',
       href: 'https://flickit.org/profiles',
@@ -147,7 +147,7 @@ export default function Home() {
                         </article>
                       </button>
                       <div className='flex flex-wrap mt-4'>
-                        {Object.keys(kit.extras).map((key) => <div className='rounded-lg bg-secondary text-white mx-1 px-2 text-sm py-[2px]'>{kit.extras[key]} | {key}</div>)}
+                        {Object.keys(kit.extras).map((key:any) => <div className='rounded-lg bg-secondary text-white mx-1 px-2 text-sm py-[2px]' key={key}>{kit.extras[key]} | {key}</div>)}
                       </div>
                       <a className={`bg-primary text-white ml-auto mt-6 px-9 py-1 text-md rounded-lg font-bold tracking-wider inline-block`} target='_blank' href={kit.href}>TRY THIS KIT</a>
                     </div>
@@ -244,7 +244,7 @@ export default function Home() {
             <p className='mt-2 text-sm'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <div className='flex flex-wrap mt-28 justify-between'>
-            {peopleQuotes.map((quote) => <div className='bg-white text-black rounded-3xl rounded-tl-none p-8 w-[calc(50%-24px)]'>
+            {peopleQuotes.map((quote) => <div className='bg-white text-black rounded-3xl rounded-tl-none p-8 w-[calc(50%-24px)]' key={quote.name}>
               <div className='flex'>
                 <Image src={quote.img} width={200} height={180} alt={quote.name} className='rounded-full w-14 h-14' />
                 <div className='ml-4'>
