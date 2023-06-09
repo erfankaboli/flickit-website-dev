@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { useSelectedLayoutSegment } from "next/navigation";
 import FINavLink from "./FINavLink"
 
@@ -31,9 +32,9 @@ export default function FINav() {
     const activeSegment = useSelectedLayoutSegment()
 
     return (
-        <nav className="flex items-center justify-between px-24 h-14">
+        <nav className="flex items-center justify-between px-24 h-14 relative z-50 max-w-screen-2xl mx-auto">
             <div>
-                logo
+                <Image src='/logo.svg' alt='Flickit' width={110} height={42} />
             </div>
             <div>
                 {navItems.map((navItem) =>
@@ -43,7 +44,7 @@ export default function FINav() {
                 )}
             </div>
             <div>
-                <button className="bg-primary text-white py-2 px-6 rounded-md">
+                <button className="bg-primary text-white py-[6px] px-8 text-base font-semibold tracking-wider rounded-md">
                     LOGIN
                 </button>
             </div>
